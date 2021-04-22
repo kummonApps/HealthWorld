@@ -8,6 +8,12 @@ body {
   color: #444444;
 }
 
+.bordelogin{
+  border-radius: 12px;
+  border: 2px solid #1977cc;
+  padding: 20px;
+}
+
 a {
   color: #1977cc;
   text-decoration: none;
@@ -185,6 +191,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo a {
   color: #2c4964;
+}
+.textblue{
+  color:#2c4964;
+}
+.textbluedark{
+  color:#343a40;
 }
 
 #header .logo img {
