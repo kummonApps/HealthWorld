@@ -1749,3 +1749,7 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+select {
+  width:30% !important;
+}
