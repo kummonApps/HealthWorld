@@ -1,38 +1,26 @@
 <html>
 
-<head>
-	<title>HealthWorld</title>
-	<link rel="stylesheet" type="text/css" href="css/estiloIntelligencia.css">
-</head>
-
+<header>
+	<title> Adivinador </title>
+	<link rel="stylesheet" type="text/css" href="css/adivinador.css">
+</header>
 
 <body>
 
-	<header>
-
-		<h1>HealthWorld</h1>
-
-
-	</header>
-
-
+	<head>
+		<h1>Adivinador</h1>
+	</head>
 	<main>
-
-
-
-
 		<?php
-		//ESTO REALMENTE NO ESTARA VISIBLE PARA LOS MEDICOS, SOLO ES PARA IR AÑADIENDO MAS VALORES FACIL Y DE MANERA VISUAL
-		//CONECTAMOS CON LA BD
-		require "conexion.php";
-
-		//RECOGEMOS LA RESPUESTA
+		require 'conexion.php';
+		//recogemos la respuesta
 		$respuesta = $_GET["r"];
 		$nodo = $_GET["n"];
 		$nombreAnterior = $_GET["p"];
 		$numPregunta = $_GET["np"];
-
-
+		//echo "Nodo :" . $nodo;
+		//echo "<br>";
+		//echo "Respuesta: " . $respuesta;
 		//----------------------------------------------
 		function formularioRespuesta($n, $p)
 		{
@@ -108,31 +96,11 @@
 			}
 			//-----------------------------------------------------
 
-			echo "<h2>¡GRACIAS POR TU APORTACION A HealthWorld!</h2>";
+			echo "<h2>¡GRACIAS! ;)</h2>";
 		}
 
-
 		?>
-
-
 	</main>
-
-	<br>
-	<br>
-
-
-
-	<footer>
-
-		<?php
-		echo "<a href='index.php?n=1&r=0'>Volver a probar</a>";
-		echo "<br><br><a href='datos.php'>Datos de HealthWorld</a>";
-		?>
-
-	</footer>
-
-
-
 </body>
 
 </html>
