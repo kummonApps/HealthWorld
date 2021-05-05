@@ -1,14 +1,14 @@
 <html>
 
 <header>
-	<title> Adivinador </title>
-	<link rel="stylesheet" type="text/css" href="css/adivinador.css">
+	<title>   HealthWorld </title>
+	<link rel="stylesheet" type="text/css" href="css/  HealthWorld.css">
 </header>
 
 <body>
 
 	<head>
-		<h1>Adivinador</h1>
+		<h1>  HealthWorld</h1>
 	</head>
 	<main>
 		<?php

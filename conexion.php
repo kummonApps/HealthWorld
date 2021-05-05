@@ -3,7 +3,7 @@
 $mysql_host = "localhost";
 $mysql_usuario = "root";
 $mysql_passwd = "usbw";
-$mysql_db = "adivinador";
+$mysql_db = "kummonapps";
 
 $enlace = mysqli_connect($mysql_host, $mysql_usuario, $mysql_passwd, $mysql_db);
 

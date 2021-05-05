@@ -1,14 +1,14 @@
 <html>
 
 <header>
-    <title> Adivinador </title>
-    <link rel="stylesheet" type="text/css" href="css/adivinador.css">
+    <title>   HealthWorld </title>
+    <link rel="stylesheet" type="text/css" href="css/  HealthWorld.css">
 </header>
 
 <body>
 
     <head>
-        <h1>Adivinador</h1>
+        <h1>  HealthWorld</h1>
     </head>
     <main>
     <?php
@@ -98,7 +98,9 @@ if ($resultado = mysqli_query($enlace, $consulta)) {
  
 	if($resultado->num_rows === 0)
     {
+
         echo 'No existe el nodo';
+		
     }
 
 	else{
@@ -166,6 +168,8 @@ if ($resultado = mysqli_query($enlace, $consulta)) {
 
 <?php
 	echo "<a href='index.php?n=1&r=0'>Volver a probar</a>";
+	//	echo "<a href='index.php?n=1&r=0'>Volver a probar</a>";
+
 ?>
 
 </footer>
