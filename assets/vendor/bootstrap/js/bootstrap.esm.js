@@ -3424,7 +3424,7 @@ const BSCLS_PREFIX_REGEX$1 = new RegExp(`(^|\\s)${CLASS_PREFIX$1}\\S+`, 'g');
 const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
 const DefaultType$3 = {
   animation: 'boolean',
-  template: 'string',
+  : 'string',
   title: '(string|element|function)',
   trigger: 'string',
   delay: '(number|object)',
@@ -3450,7 +3450,7 @@ const AttachmentMap = {
 };
 const Default$3 = {
   animation: true,
-  template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
+  : '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
   trigger: 'hover focus',
   title: '',
   delay: 0,
@@ -3763,7 +3763,7 @@ class Tooltip extends BaseComponent {
     }
 
     const element = document.createElement('div');
-    element.innerHTML = this.config.template;
+    element.innerHTML = this.config.;
     this.tip = element.children[0];
     return this.tip;
   }
@@ -4065,7 +4065,7 @@ class Tooltip extends BaseComponent {
     typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
 
     if (config.sanitize) {
-      config.template = sanitizeHtml(config.template, config.allowList, config.sanitizeFn);
+      config. = sanitizeHtml(config., config.allowList, config.sanitizeFn);
     }
 
     return config;
@@ -4168,7 +4168,7 @@ const Default$2 = { ...Tooltip.Default,
   offset: [0, 8],
   trigger: 'click',
   content: '',
-  template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
+  : '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
 };
 const DefaultType$2 = { ...Tooltip.DefaultType,
   content: '(string|element|function)'
