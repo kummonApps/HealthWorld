@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
 <link href="assets/img/favicon.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!--  Main CSS File -->
+  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
     <style>
@@ -46,27 +46,27 @@
     </style>
 
     
-    <!-- Custom styles for this  -->
+    <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="d-flex justify-content-center mt-4 text-center">
 
     
     
-    <div class="bordelogin col-4 mt-4">
-        <form>
-            <a href="Inindex.html">
-            <img class="mb-4" src="assets/img/logo_wh.jpg" width="200">
+      <div class="bordelogin col-4 mt-4">
+          <form action="login.php" method="post">
+            <a href="index.html">
+             <img class="mb-4" src="assets/img/logo_wh.jpg" width="200">
             </a>
             <h1 class="h3 mb-3 fw-normal textbluedark">Iniciar sesion</h1>
 
             <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Correo</label>
+              <input type="email" class="form-control" id="floatingInput" name="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Correo</label>
             </div>
             <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Contraseña</label>
+              <input type="password" class="form-control" id="floatingPassword" name="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Contraseña</label>
             </div>
 
             <!-- <div class="checkbox mb-3">
@@ -74,10 +74,9 @@
                   <input type="checkbox" value="remember-me"> Recordarme
               </label>
             </div> -->
-            <a href="Inperfil.html" class="w-100 btn btn-lg btn-primary"><span class="d-none d-md-inline">Iniciar Sesion</span></a>
-
+            <input class="w-100 btn btn-lg btn-primary" type="submit" value="Iniciar Sesion">
             <br> <br>   
-            <a href="Inindex.html" class="btn btn-success"><span class="d-none d-md-inline">Volver</span></a>
+            <button type="button" class="btn btn-success">Volver</button>
 
             <br><br>         <br>
             <div class="me-md-auto text-center text-md-start">
@@ -87,8 +86,8 @@
                Designed by <a href="https://kummonapps.github.io/Castellano.html">KummonApps</a>
               </div>
             </div>
-        </form>
-    </div>
+          </form>
+      </div>
 
     
     
