@@ -39,13 +39,13 @@ require('conexion.php');
 <!-- ======= Header logfejat ======= -->
 <header id="header" >
 <div class="container d-flex align-items-center">
-  <a href="Esperfil.html">
+  <a href="Esperfil_doctor.php">
   <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
   </a>
 
   <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
     <ul>
-      <li><a class="nav-link scrollto " href="Esperfil.html">Perfil</a> </li>
+      <li><a class="nav-link scrollto " href="Esperfil_doctor.php">Perfil</a> </li>
       <li><a class="nav-link scrollto " href="Esinformacion.html">Información</a></li>
       <li><a class="nav-link scrollto active" href="Esbuscador.html">Buscar Medicamentos</a></li>
       <li><a class="nav-link scrollto" href="Espregunta1.html">I.A.</a></li>

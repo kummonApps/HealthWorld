@@ -69,18 +69,7 @@ $fila=mysqli_fetch_row($resultados);
 </head>
 
 <body>
-  
-<!-- ======= Top Bar ======= -->
-<div id="topbar" class="d-flex align-items-center fixed-top">
-  <div class="container d-flex justify-content-between">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">support@healthworld.com</a>
-      <i class="bi bi-phone"></i> +34 619111225
-    </div>
-  </div>
-</div>
-
-<!-- ======= Header logfejat ======= -->
+  <!-- ======= Header logfejat ======= -->
 <header id="header" >
   <div class="container d-flex align-items-center" style="margin-top: 25px;">
     <a href="perfil.html">
@@ -92,12 +81,12 @@ $fila=mysqli_fetch_row($resultados);
 
     <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
       <ul>
-        <li><a class="nav-link scrollto active" href="perfil.html">Perfil</a> </li>
+        <li><a class="nav-link scrollto active" href="Esperfil_doctor.php">Perfil</a> </li>
 
-        <li><a class="nav-link scrollto " href="informacion.html">Informacion</a></li>
-        <li><a class="nav-link scrollto" href="buscador.html">Buscar Medicamentso</a></li>
+        <li><a class="nav-link scrollto " href="Esinformacion.html">Informacion</a></li>
+        <li><a class="nav-link scrollto" href="Esbuscador.html">Buscar Medicamentso</a></li>
            
-        <li><a class="nav-link scrollto" href="pregunta1.html">Ia </a></li>
+        <li><a class="nav-link scrollto" href="Espregunta1.html">I.A. </a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -105,7 +94,7 @@ $fila=mysqli_fetch_row($resultados);
 
 
     </ul>
-    <a href="index.html"><span class="btn btn-danger">Cerrar sesion</span></a>
+    <a href="Esindex.html"><span class="btn btn-danger">Cerrar sesion</span></a>
 
   </div>
 </header><!-- End Header -->
@@ -123,7 +112,9 @@ $fila=mysqli_fetch_row($resultados);
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="assets/img/doctors/doctors-1.jpg" class="rounded-circle" alt="fotoDoctor" width="150">
                     <div class="mt-3">
-                      <h6 class="mb-1">Especialidad en Alergología</h6>
+                    <?php 
+                      echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[8] ."</form>");
+                       ?>
                     </div>
                   </div>
                 </div>
@@ -155,7 +146,7 @@ $fila=mysqli_fetch_row($resultados);
                     </div>
                     <div class="col-sm-9 text-secondary">
                       <?php 
-                      echo("<form class='form-inline' action='perfil_doctor.php' method = 'GET'>" .$fila[1] ."</form>");
+                      echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[1] ."</form>");
                        ?>
 
                     </div>

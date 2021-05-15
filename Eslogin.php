@@ -18,16 +18,16 @@ $resultadoPasswordExistSelect = mysqli_fetch_assoc($consultaPasswordExistSelect)
 
 if($resultadoUserExistSelect['cuantos'] == 0){
     echo "<script>alert('ERROR - El usuario no existe');</script>";
-    // include("failLogin.html");
+    include("EsEslogin.html");
 }
 else if($resultadoPasswordExistSelect['contrasenya'] != $password){
     echo "<script>alert('ERROR - El usuario y la contrasenya no coinciden');</script>";
-    // include("failLogin.html");
+    include("EsEslogin.html");
 }
 else{
     session_start();
     $_SESSION["nick_logueado"] = $user;
-    include("perfil_doctor.php");
+    include("Esperfil_doctor.php");
 }		
 
 ?>
