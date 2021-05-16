@@ -47,7 +47,7 @@ require('conexion.php');
     <ul>
       <li><a class="nav-link scrollto " href="Esperfil.html">Perfil</a> </li>
       <li><a class="nav-link scrollto " href="Esinformacion.html">Información</a></li>
-      <li><a class="nav-link scrollto active" href="Esbuscador.html">Buscar Medicamentos</a></li>
+      <li><a class="nav-link scrollto active" href="Esbuscador.php">Buscar Medicamentos</a></li>
       <li><a class="nav-link scrollto" href="Espregunta1.html">I.A.</a></li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -63,11 +63,16 @@ require('conexion.php');
 <div class="card-body">
   <h4 align="center">BUSCADOR DE MEDICAMENTOS</h4>
   <br>
-  <div class="col-12 text-center">
-    <label>Medicamentos</label>
-    <select class="custom-select" name="secundarios">
+  <div align="center" class="text-center">
+    <h4>Medicamentos</h4>
+    <input class="col-3" type="text"> 
+  </div>
+  <br>
+  <div class="text-center">
+    <h4>Efectos secundarios</h4>
+    <select class="col-3 custom-select" name="secundarios">
       <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
+      $conexion = mysqli_query($enlace, "SELECT DISTINCT descripcio FROM EFECTES_SECUNDARIS");
       while ($row = $conexion->fetch_assoc()){
       echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
       }
@@ -75,11 +80,11 @@ require('conexion.php');
       </select> 
   </div>
   <br>
-  <div class="col-12 text-center">
-    <label>Efectos secundarios</label>
-    <select class=" col-6 custom-select" name="secundarios">
+  <div class="text-center">
+    <h4>Sintomatología</h4>
+    <select class="col-3 custom-select" name="secundarios">
       <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
+      $conexion = mysqli_query($enlace, "SELECT DISTINCT descripcio FROM SIMPTOMATOLOGIA");
       while ($row = $conexion->fetch_assoc()){
       echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
       }
@@ -87,11 +92,11 @@ require('conexion.php');
       </select> 
   </div>
   <br>
-  <div class="col-12 text-center">
-    <label>Sintomatología</label>
-    <select class=" col-6 custom-select" name="secundarios">
+  <div class="text-center">
+    <h4>Patología</h4>
+    <select class="col-3 custom-select" name="secundarios">
       <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
+      $conexion = mysqli_query($enlace, "SELECT DISTINCT descripcio FROM PATOLOGIA");
       while ($row = $conexion->fetch_assoc()){
       echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
       }
@@ -99,11 +104,11 @@ require('conexion.php');
       </select> 
   </div>
   <br>
-  <div class="col-12 text-center">
-    <label>Patología</label>
-    <select class=" col-6 custom-select" name="secundarios">
+  <div class="text-center">
+    <h4>Laboratorio</h4>
+    <select class="col-3 custom-select" name="secundarios">
       <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
+      $conexion = mysqli_query($enlace, "SELECT DISTINCT descripcio FROM LABORATORI");
       while ($row = $conexion->fetch_assoc()){
       echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
       }
@@ -111,30 +116,22 @@ require('conexion.php');
       </select> 
   </div>
   <br>
-  <div class="col-12 text-center">
-    <label>Laboratorio</label>
-    <select class=" col-6 custom-select" name="secundarios">
-      <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
+  <div class="text-center">
+    <h4>Forma Farmacéutica</h4>
+    <select class="col-3 custom-select" name="secundarios">
+    <?php      
+      $conexion = mysqli_query($enlace, "SELECT DISTINCT descripcio FROM FORMA_FARMACEUTICA");
       while ($row = $conexion->fetch_assoc()){
-      echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
+      echo "<option value=\"descripcio\">" .$row['descripcio']. "</option>";
       }
       ?>
-      </select> 
-  </div>
-  <br>
-  <div class="col-12 text-center">
-    <label>Forma Farmacéutica</label>
-    <select class=" col-6 custom-select" name="secundarios">
-      <?php      
-      $conexion = mysqli_query($enlace, "SELECT descripcio FROM EFECTES_SECUNDARIS");
-      while ($row = $conexion->fetch_assoc()){
-      echo "<option value=\"id_efectes\">" .$row['descripcio']. "</option>";
-      }
-      ?>
-      </select> 
+      </select>
   </div>         
   </div>
+  <div align="center">
+  <input class="btn btn-primary" type="submit" value="Buscar">
+    </div>
+    <br>
   </div>
 </body>
 <!-- Footer -->
