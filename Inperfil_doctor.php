@@ -8,12 +8,12 @@ header("Content-Type: text/html;charset=utf-8");
 	$servidor="localhost";
 	$usuario="root";
 	$contraseña="usbw";
-	$bd="kummonapps";	
+	$bd="daw2_jscjm";	
 
     $value=1;
     $c=1;
 
-	$conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd) or die(mysql_error());
+	$conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd) or die(mysqli_connect_error());
 	
 	if (!$conexion)
 	{
@@ -84,9 +84,9 @@ $fila=mysqli_fetch_row($resultados);
         <li><a class="nav-link scrollto active" href="Inperfil_doctor.php">Profile</a> </li>
 
         <li><a class="nav-link scrollto " href="Ininformacion.html">Information</a></li>
-        <li><a class="nav-link scrollto" href="Inbuscador.html">Search Medication</a></li>
+        <li><a class="nav-link scrollto" href="Inbuscador.php">Search Medication</a></li>
            
-        <li><a class="nav-link scrollto" href="Inpregunta1.html">I.A. </a></li>
+        <li><a class="nav-link scrollto" href="Inpregunta1.html">A.I.</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -94,7 +94,7 @@ $fila=mysqli_fetch_row($resultados);
 
 
     </ul>
-    <a href="Inindex.html"><span class="btn btn-danger">Sign off</span></a>
+    <a href="Inindex.html"><span class="btn btn-danger">Log Out</span></a>
 
   </div>
 </header><!-- End Header -->
@@ -131,7 +131,7 @@ $fila=mysqli_fetch_row($resultados);
                     <a href=""><h6 class="mb-0"><i class="far fa-star"></i>  Loratadina </h6></a>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <a href=""><h6 class="mb-0"><i class="fas fa-search"></i>  Buscado recientemente: Levocetirizina </h6></a>
+                    <a href=""><h6 class="mb-0"><i class="fas fa-search"></i>  Last Search: Levocetirizina </h6></a>
                   </li>
                 </ul>
               </div>
@@ -192,7 +192,7 @@ $fila=mysqli_fetch_row($resultados);
                 </div>
                 
               </div>
-                <a href="Insoporte.html" style="margin-left: 625px;"><span  class="btn btn-warning">Suport</span></a>
+                <a href="Insoporte.html" style="margin-left: 625px;"><span  class="btn btn-warning">Support</span></a>
 
             </div>
           </div>

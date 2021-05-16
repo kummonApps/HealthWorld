@@ -8,12 +8,12 @@ header("Content-Type: text/html;charset=utf-8");
 	$servidor="localhost";
 	$usuario="root";
 	$contraseña="usbw";
-	$bd="kummonapps";	
+	$bd="daw2_jscjm";	
 
     $value=1;
     $c=1;
 
-	$conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd) or die(mysql_error());
+	$conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd) or die(mysqli_connect_error());
 	
 	if (!$conexion)
 	{
@@ -84,7 +84,7 @@ $fila=mysqli_fetch_row($resultados);
         <li><a class="nav-link scrollto active" href="Esperfil_doctor.php">Perfil</a> </li>
 
         <li><a class="nav-link scrollto " href="Esinformacion.html">Informacion</a></li>
-        <li><a class="nav-link scrollto" href="Esbuscador.html">Buscar Medicamentso</a></li>
+        <li><a class="nav-link scrollto" href="Esbuscador.php">Buscar Medicamentos</a></li>
            
         <li><a class="nav-link scrollto" href="Espregunta1.html">I.A. </a></li>
       </ul>
