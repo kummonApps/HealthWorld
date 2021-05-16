@@ -8,7 +8,7 @@ header("Content-Type: text/html;charset=utf-8");
 	$servidor="localhost";
 	$usuario="root";
 	$contraseña="usbw";
-	$bd="daw2_jscjm";	
+	$bd="kummonapps";	
 
     $value=1;
     $c=1;
@@ -71,7 +71,7 @@ $fila=mysqli_fetch_row($resultados);
 <body>
   <!-- ======= Header logfejat ======= -->
 <header id="header" >
-  <div class="container d-flex align-items-center" style="margin-top: 25px;">
+  <div class="container d-flex align-items-center">
     <a href="Esperfil_doctor.php">
     <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
     </a>
@@ -82,19 +82,15 @@ $fila=mysqli_fetch_row($resultados);
     <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
       <ul>
         <li><a class="nav-link scrollto active" href="Esperfil_doctor.php">Perfil</a> </li>
-
-        <li><a class="nav-link scrollto " href="Esinformacion.html">Informacion</a></li>
-        <li><a class="nav-link scrollto" href="Esbuscador.php">Buscar Medicamentos</a></li>
-           
-        <li><a class="nav-link scrollto" href="Espregunta1.html">I.A. </a></li>
+        <li><a class="nav-link scrollto" href="Esinformacion.html">Información</a></li>
+        <li><a class="nav-link scrollto" href="Esbuscador.html">Buscar Medicamentos</a></li>
+        <li><a class="nav-link scrollto" href="Espregunta1.html">I.A.</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
-    <ul>      <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
-
-
+    <ul><li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
     </ul>
-    <a href="Esindex.html"><span class="btn btn-danger">Cerrar sesion</span></a>
+    <a href="Esindex.html"><span class="btn btn-danger">Cerrar sesión</span></a>
 
   </div>
 </header><!-- End Header -->
@@ -112,9 +108,9 @@ $fila=mysqli_fetch_row($resultados);
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="assets/img/doctors/doctors-1.jpg" class="rounded-circle" alt="fotoDoctor" width="150">
                     <div class="mt-3">
-                    <?php 
+                    <!-- <?php 
                       echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[8] ."</form>");
-                       ?>
+                       ?> -->
                     </div>
                   </div>
                 </div>
@@ -181,6 +177,17 @@ $fila=mysqli_fetch_row($resultados);
                     <div class="col-sm-9 text-secondary">
                     <?php 
                       echo("<form class='form-inline' action='miCuenta1.php' method = 'GET'>" .$fila[3] ."</form>");
+                       ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Trabaja en</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php 
+                      echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[8] ."</form>");
                        ?>
                     </div>
                   </div>

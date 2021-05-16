@@ -8,7 +8,7 @@ header("Content-Type: text/html;charset=utf-8");
 	$servidor="localhost";
 	$usuario="root";
 	$contraseña="usbw";
-	$bd="daw2_jscjm";	
+	$bd="kummonapps";	
 
     $value=1;
     $c=1;
@@ -69,35 +69,32 @@ $fila=mysqli_fetch_row($resultados);
 </head>
 
 <body>
-  <!-- ======= Header logfejat ======= -->
-<header id="header" >
-  <div class="container d-flex align-items-center" style="margin-top: 25px;">
-    <a href="Inperfil_doctor.php">
-    <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
-    </a>
-    <!-- <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo_wh.jpg"></a></h1> -->
-    <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<!-- ======= Header logfejat ======= -->
+<header id="header">
+    <div class="container d-flex align-items-center">
+      <a href="Esperfil.html">
+        <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
+      </a>
 
-    <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
+      <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
+        <ul>
+          <li><a class="nav-link scrollto active" href="Inperfil_doctor.php">Profile</a> </li>
+
+          <li><a class="nav-link scrollto" href="Ininformacion.html">Information</a></li>
+          <li><a class="nav-link scrollto" href="Inbuscador.php">Search Medication</a></li>
+
+          <li><a class="nav-link scrollto" href="Inpregunta1.html">A.I.</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
       <ul>
-        <li><a class="nav-link scrollto active" href="Inperfil_doctor.php">Profile</a> </li>
-
-        <li><a class="nav-link scrollto " href="Ininformacion.html">Information</a></li>
-        <li><a class="nav-link scrollto" href="Inbuscador.php">Search Medication</a></li>
-           
-        <li><a class="nav-link scrollto" href="Inpregunta1.html">A.I.</a></li>
+        <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
       </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-    <ul>      <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
+      <a href="Inindex.html"><span class="btn btn-danger">Log Out</span></a>
 
-
-    </ul>
-    <a href="Inindex.html"><span class="btn btn-danger">Log Out</span></a>
-
-  </div>
-</header><!-- End Header -->
+    </div>
+  </header><!-- End Header -->
 
   <div class="container p-4" style="margin-top: -50px;"> 
     <!-- <div *ngIf="token" class="float-right" ><button class="btn btn-light"(click)="logOut()" >Logout</button></div> -->
@@ -112,9 +109,9 @@ $fila=mysqli_fetch_row($resultados);
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="assets/img/doctors/doctors-1.jpg" class="rounded-circle" alt="fotoDoctor" width="150">
                     <div class="mt-3">
-                    <?php 
+                    <!-- <?php 
                       echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[8] ."</form>");
-                       ?>
+                       ?> -->
                     </div>
                   </div>
                 </div>
@@ -181,6 +178,17 @@ $fila=mysqli_fetch_row($resultados);
                     <div class="col-sm-9 text-secondary">
                     <?php 
                       echo("<form class='form-inline' action='miCuenta1.php' method = 'GET'>" .$fila[3] ."</form>");
+                       ?>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Works at</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <?php 
+                      echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila[8] ."</form>");
                        ?>
                     </div>
                   </div>

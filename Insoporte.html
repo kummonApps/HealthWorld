@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Perfil</title>
-
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Perfil</title>
+  
   <!--  Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">support@healthworld.com</a>
-        <i class="bi bi-phone"></i> +34 619111225
-      </div>
-      <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </div>
-
   <!-- ======= Header logfejat ======= -->
-  <header id="header">
-    <div class="container d-flex align-items-center" style="margin-top: 25px;">
-      <a href="Inperfil_doctor.php">
-        <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
-      </a>
-      <!-- <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo_wh.jpg"></a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<header id="header">
+  <div class="container d-flex align-items-center">
+    <a href="Esperfil.html">
+      <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
+    </a>
 
-      <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
-        <ul>
-          <li><a class="nav-link scrollto" href="Inperfil_doctor.php">Profile</a> </li>
-
-          <li><a class="nav-link scrollto " href="Ininformacion.html">Information</a></li>
-          <li><a class="nav-link scrollto" href="Inbuscador.html">Search Medication</a></li>
-
-          <li><a class="nav-link scrollto" href="Inpregunta1.html">I.A. </a></li>
-
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+    <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
       <ul>
-        <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
+        <li><a class="nav-link scrollto" href="Inperfil_doctor.php">Profile</a> </li>
 
+        <li><a class="nav-link scrollto" href="Ininformacion.html">Information</a></li>
+        <li><a class="nav-link scrollto" href="Inbuscador.php">Search Medication</a></li>
+
+        <li><a class="nav-link scrollto" href="Inpregunta1.html">A.I.</a></li>
 
       </ul>
-      <a href="Inindex.html"><span class="btn btn-danger">Sign off</span></a>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    <ul>
+      <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
+    </ul>
+    <a href="Inindex.html"><span class="btn btn-danger">Log Out</span></a>
 
-    </div>
-  </header><!-- End Header -->
+  </div>
+</header><!-- End Header -->
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
@@ -102,17 +100,17 @@
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
 
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asumpto:" required>
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject:" required>
             </div>
             <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Mensaje:" required></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="Message:" required></textarea>
             </div>
             <div class="my-3">
               <div class="loading">Cargando</div>
               <div class="error-message"></div>
               <div class="sent-message">El mensaje se ha enviado correctamente, Muchas gracias por todo!</div>
             </div>
-            <div class="text-center"><button type="submit">Enviar</button></div>
+            <div class="text-center"><button type="submit">Send</button></div>
           </form>
 
         </div>
@@ -123,24 +121,24 @@
   </section><!-- End Contact Section -->
   <!-- Footer -->
 
-  <div class="container d-md-flex py-4">
+<div class="container d-md-flex py-4">
 
-    <div class="me-md-auto text-center text-md-start">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Health World</span></strong>. <br>All Rights Reserved
-
-        Designed by <a href="https://kummonapps.github.io/Castellano.html">KummonApps</a>
-      </div>
-    </div>
-    <div class="social-links text-center text-md-right pt-3 pt-md-0">
-      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  <div class="me-md-auto text-center text-md-start">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Health World</span></strong>. <br>All Rights Reserved
+    
+     Designed by <a href="https://kummonapps.github.io/Castellano.html">KummonApps</a>
     </div>
   </div>
-  </footer><!-- End Footer -->
+  <div class="social-links text-center text-md-right pt-3 pt-md-0">
+    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  </div>
+</div>
+</footer><!-- End Footer -->
 
   <body>
 
