@@ -4,6 +4,7 @@
 require_once('conexion.php');
 ?>
 <?php
+error_reporting(0); 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $medicamentos = $_POST['medicamentos'];
     $efectossecundarios = $_POST['efectos-secundarios'];
@@ -13,10 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $instruccion = "select id_medicament, nom from medicaments where id_medicament = '" . $efectossecundarios . "' and id_medicament = '" . $patologia . "' and id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
 $resultados = mysqli_query($enlace, $instruccion);
-if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") && ($laboratorio == "") && ($formafarmaceutica == "")) {
-    $instruccion = "select * from medicaments";
-    $resultados = mysqli_query($enlace, $instruccion);
-}
 //$fila = mysqli_fetch_row($resultados);
 ?>
 
@@ -52,7 +49,7 @@ if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") &
 </head>
 
 <body>
-   <!-- ======= Header logfejat ======= -->
+<!-- ======= Header logfejat ======= -->
 <header id="header">
     <div class="container d-flex align-items-center">
       <a href="Inperfil_doctor.php">
@@ -61,10 +58,10 @@ if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") &
 
       <nav id="navbar" class="navbar order-last order-lg-0" style="padding-left: 350px;">
         <ul>
-          <li><a class="nav-link scrollto" href="Inperfil_doctor.php">Profile</a> </li>
+          <li><a class="nav-link scrollto active" href="Inperfil_doctor.php">Profile</a> </li>
 
           <li><a class="nav-link scrollto" href="Ininformacion.html">Information</a></li>
-          <li><a class="nav-link scrollto active" href="Inbuscador.php">Search Medication</a></li>
+          <li><a class="nav-link scrollto" href="Inbuscador.php">Search Medication</a></li>
 
           <li><a class="nav-link scrollto" href="Inpregunta1.html">A.I.</a></li>
 
@@ -82,40 +79,60 @@ if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") &
     <div class="card offset-lg-1 col-lg-10">
         <div class="card-body">
             <div class="section-title">
-                <h2>RESULTADOS DE LA BUSQUEDA</h2>
-                <p>Estos son los medicamentos que coinciden con los criterios seleccionados</p>
+                <h2>SEARCH RESULTS</h2>
+                <p>These are the medicines that match the selected criteria</p>
             </div>
             <div class="mt-3">
                 <?php
+        
                 if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") && ($laboratorio == "") && ($formafarmaceutica == "")) {
                     $instruccion = "select * from medicaments";
                     $resultados = mysqli_query($enlace, $instruccion);
-                    while (($fila = mysqli_fetch_row($resultados)) == true) {
-                        echo
-                        "<tr>
-                        <hr>
-                        <form action='Inmedicament.php' method='post'>
-                        <span name='medicament' class='appointment-btn scrollto mr-4' type='submit' value=" . $fila[0] . ">Consultar</span>
-                        <td>" . $fila[2] . "</td>                       
-                        </form>
-                        <br>            
-                    </tr>";
+                }
+                else{
+                    if ($efectossecundarios == ""){
+                        $instruccion = "select * from medicaments where id_medicament = '" . $patologia . "' and id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
+                        $resultados = mysqli_query($enlace, $instruccion);
+                        if ($patologia == ""){
+                            $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
+                            $resultados = mysqli_query($enlace, $instruccion);
+                            if ($laboratorio == ""){
+                                if($formafarmaceutica == 1 || $formafarmaceutica == 2 || $formafarmaceutica == 3 || $formafarmaceutica == 4 ){
+                                    $instruccion = "select * from medicaments where id_medicament != 5";
+                                    $resultados = mysqli_query($enlace, $instruccion);
+                                }
+                                else{
+                                    $instruccion = "select * from medicaments where id_medicament = 5";
+                                    $resultados = mysqli_query($enlace, $instruccion);
+                                }                           
+                            }
+                            else if($formafarmaceutica == ""){
+                                if($laboratorio == 1 || $laboratorio == 2){
+                                    $instruccion = "select * from medicaments where id_medicament = 1 OR id_medicament = 2";
+                                    $resultados = mysqli_query($enlace, $instruccion);
+                                }
+                                else{
+                                    $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "'";
+                                    $resultados = mysqli_query($enlace, $instruccion);
+                                }
+                            }
+                        }
                     }
                 }
-                else if(($fila = mysqli_fetch_row($resultados)) == false){
-                    echo "<p align='center'>No hay medicamentos que coincidan con los criterios de busqueda.</p>";
-                }
+                // if($resultados == false){
+                //     echo "<p align='center'>No hay medicamentos que coincidan con los criterios de busqueda.</p>";
+                // }
                 while (($fila = mysqli_fetch_row($resultados)) == true) {
                     echo
                     "<tr>
                         <hr>
-                        <form action='Esmedicament.php' method='post'>
-                        <span name='medicament' class='appointment-btn scrollto mr-4' type='submit' value=" . $fila[0] . ">Consultar</span>
-                        <td>" . $fila[1] . "</td>                       
+                        <form action='Inmedicament.php' method='post'>
+                        <button name='medicament' class='appointment-btn scrollto mr-4' type='submit' value=" . $fila[0] . ">Consult</button>
+                        <td>" . $fila[2] . "</td>                       
                         </form>
                         <br>            
                     </tr>";
-                };
+                }                
                 ?>
                 <hr>
             </div>

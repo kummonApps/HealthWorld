@@ -65,18 +65,18 @@ require('conexion.php');
     <div class="card-body">
       <form action="Inresultado.php" method="post">
       <div class="section-title">
-            <h2>BUSQUEDA DE MEDICAMENTOS (beta v.0.2.)</h2>
-            <p>Encuentre aquí el medicamiento adecuado (solo español)</p>
+            <h2>SEARCH FOR MEDICINES</h2>
+            <p>Find the right medication here</p>
           </div>
         </div>
         <div align="center" class="text-center">
-          <h4>Medicamentos</h4>
-          <input class="col-3" type="text" name="medicamentos" placeholder="Introduzca el nombre de medicamento">
+          <h4>Medicines</h4>
+          <input class="col-3" type="text" name="medicamentos" placeholder="Enter the medicine name">
           <br>
           <br>
-          <h4>Efectos secundarios</h4>
+          <h4>Side effects</h4>
           <select class="col-3 custom-select" name="efectos-secundarios">
-          <option value="">Selecciona un efecto secundario</option>
+          <option value="">Select a side effect</option>
             <?php
             $conexion = mysqli_query($enlace, "SELECT DISTINCT * FROM EFECTES_SECUNDARIS GROUP BY descripcio");
             while ($row = $conexion->fetch_assoc()) {
@@ -88,9 +88,9 @@ require('conexion.php');
           <br>
           <br>
 
-          <h4>Patología</h4>
+          <h4>Pathology</h4>
           <select class="col-3 custom-select" name="patologia">
-          <option value="">Selecciona un patologia</option>
+          <option value="">Select a pathology</option>
             <?php
             $conexion = mysqli_query($enlace, "SELECT DISTINCT * FROM PATOLOGIA GROUP BY descripcio");
             while ($row = $conexion->fetch_assoc()) {
@@ -101,9 +101,9 @@ require('conexion.php');
 
           <br>
           <br>
-          <h4>Laboratorio</h4>
+          <h4>Laboratory</h4>
           <select class="col-3 custom-select" name="laboratorio">
-          <option value="">Selecciona un laboratorio</option>
+          <option value="">Select a laboratory</option>
             <?php
             $conexion = mysqli_query($enlace, "SELECT DISTINCT * FROM LABORATORI GROUP BY descripcio");
             while ($row = $conexion->fetch_assoc()) {
@@ -114,9 +114,9 @@ require('conexion.php');
 
           <br>
           <br>
-          <h4>Forma Farmacéutica</h4>
+          <h4>Pharmaceutical form</h4>
           <select class="col-3 custom-select" name="forma-farmaceutica">
-          <option value="">Selecciona una forma farmacéutica</option>
+          <option value="">Select a pharmaceutical form</option>
             <?php
             $conexion = mysqli_query($enlace, "SELECT * FROM FORMA_FARMACEUTICA GROUP BY descripcio");
             while ($row = $conexion->fetch_assoc()) {
@@ -126,7 +126,7 @@ require('conexion.php');
           </select>
           <br>
           <br>
-          <input class="appointment-btn scrollto" type="submit" value="Buscar">
+          <input class="appointment-btn scrollto" type="submit" value="Search">
           <br>
           <br>
 

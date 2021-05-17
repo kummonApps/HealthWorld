@@ -38,10 +38,6 @@ $instruccion = "select * from laboratori where id_medicament = ".$id."";
 $resultados = mysqli_query($conexion, $instruccion);
 $fila3=mysqli_fetch_row($resultados);
 
-$instruccion = "select * from patologia where id_medicament = ".$id."";
-$resultados = mysqli_query($conexion, $instruccion);
-$fila4=mysqli_fetch_row($resultados);
-
 $instruccion = "select * from simptomatologia where id_medicament = ".$id."";
 $resultados = mysqli_query($conexion, $instruccion);
 $fila4=mysqli_fetch_row($resultados);
@@ -166,10 +162,14 @@ $fila4=mysqli_fetch_row($resultados);
           </div>
     </details>
     <details>
-        <summary id="asmastrong"><strong>side effects</strong></summary>
+        <summary id="asmastrong"><strong>Side effects</strong></summary>
         <div class="content">
         <?php 
-            echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila2[1] ."</form>");
+            $instruccion = "select * from efectes_secundaris where id_medicament = ".$id."";
+            $resultados = mysqli_query($conexion, $instruccion);
+            while(($fila2 = mysqli_fetch_row($resultados)) == true){
+                echo("<form class='form-inline' action='Inperfil_doctor.php' method = 'GET'>- " .$fila2[1]."</form>");
+            }
         ?>         
           </div>
     </details>
@@ -178,14 +178,6 @@ $fila4=mysqli_fetch_row($resultados);
         <div class="content">
         <?php 
             echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila3[1] ."</form>");
-        ?>         
-          </div>
-    </details>
-    <details>
-        <summary id="asmastrong"><strong>Pathology</strong></summary>
-        <div class="content">
-        <?php 
-            echo("<form class='form-inline' action='Esperfil_doctor.php' method = 'GET'>" .$fila4[1] ."</form>");
         ?>         
           </div>
     </details>

@@ -200,8 +200,7 @@ $fila=mysqli_fetch_row($resultados);
                 </div>
                 
               </div>
-                <a href="Insoporte.html" style="margin-left: 625px;"><span  class="btn btn-warning">Support</span></a>
-
+                <a href="Insoporte.html" style="margin-left: 625px;"><span  class="appointment-btn scrollto">Support</span></a>
             </div>
           </div>
         </div>
