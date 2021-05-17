@@ -72,7 +72,7 @@ $fila=mysqli_fetch_row($resultados);
 <!-- ======= Header logfejat ======= -->
 <header id="header">
     <div class="container d-flex align-items-center">
-      <a href="Esperfil.html">
+      <a href="Inperfil_doctor.php">
         <img class="me-auto" src="assets/img/logo_wh.jpg" width="300">
       </a>
 
@@ -91,7 +91,7 @@ $fila=mysqli_fetch_row($resultados);
       <ul>
         <li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
       </ul>
-      <a href="Inindex.html"><span class="btn btn-danger">Log Out</span></a>
+      <a href="Inindex.html"><span class=" ">Log Out</span></a>
 
     </div>
   </header><!-- End Header -->

@@ -83,14 +83,14 @@ $fila=mysqli_fetch_row($resultados);
       <ul>
         <li><a class="nav-link scrollto active" href="Esperfil_doctor.php">Perfil</a> </li>
         <li><a class="nav-link scrollto" href="Esinformacion.html">Información</a></li>
-        <li><a class="nav-link scrollto" href="Esbuscador.html">Buscar Medicamentos</a></li>
+        <li><a class="nav-link scrollto" href="Esbuscador.php">Buscar Medicamentos</a></li>
         <li><a class="nav-link scrollto" href="Espregunta1.html">I.A.</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
     <ul><li style="display: none;"><a class="nav-link scrollto" style="display: none;"></a></li>
     </ul>
-    <a href="Esindex.html"><span class="btn btn-danger">Cerrar sesión</span></a>
+    <a href="Esindex.html"><span class="">Cerrar sesión</span></a>
 
   </div>
 </header><!-- End Header -->
@@ -199,7 +199,7 @@ $fila=mysqli_fetch_row($resultados);
                 </div>
                 
               </div>
-                <a href="Essoporte.html" style="margin-left: 625px;"><span  class="btn btn-warning">Soporte</span></a>
+                <a href="Essoporte.html" style="margin-left: 625px;"><span  class="appointment-btn scrollto ">Soporte</span></a>
 
             </div>
           </div>

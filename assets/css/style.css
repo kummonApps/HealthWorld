@@ -11,12 +11,9 @@ body {
 
 .bodyIA{
   background-image:url("../img/IAbg1.jpg");
-}
-
-.bodyIA img{
-  width: 100%;    
-  height: 100%; 
-  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .boton{
@@ -29,12 +26,6 @@ body {
   padding: 20px;
   background-color: white;
   margin-left:500px
-}
-
-.bordelogin{
-  border-radius: 12px;
-  border: 2px solid #1977cc;
-  padding: 20px;
 }
 
 a {

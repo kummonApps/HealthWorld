@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS `usuari` (
 
 CREATE TABLE IF NOT EXISTS `medicaments` (
   `id_medicament` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id del medicament',
-  `composicio` varchar(25) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL COMMENT 'Composicio del medicament',
-  `nom` varchar(25) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nom del medicament',
+  `composicio` varchar(500) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL COMMENT 'Composicio del medicament',
+  `nom` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nom del medicament',
   `codi_barres` varchar(19) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL COMMENT 'Codi de barres del medicament',
   `comentaris` varchar(2000) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL COMMENT 'Comentari del medicament',
   PRIMARY KEY (`id_medicament`)
@@ -82,8 +82,8 @@ CREATE TABLE IF NOT EXISTS `arbol`
 
 
 INSERT INTO medicaments (
-  composicio,
-  nom,
+    composicio,
+   nom,
   codi_barres,
   comentaris
   )
@@ -116,7 +116,47 @@ INSERT INTO efectes_secundaris (
     id_medicament
 )
 VALUES (
-    'diabetes mellitus,problemas para dormir,ansiedad,temblor,cansancio,mareo',
+    'Diabetes mellitus',
+    1
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Problemas para dormir',
+    1
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Ansiedad',
+    1
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Temblor',
+    1
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Cansancio',
+    1
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Mareo',
     1
 );
 INSERT INTO forma_farmaceutica (
@@ -124,7 +164,7 @@ INSERT INTO forma_farmaceutica (
     id_medicament
 )
 VALUES (
-    'liquid',
+    'Pastillas orales',
     1
 );
 INSERT INTO laboratori (
@@ -142,7 +182,7 @@ INSERT INTO patologia (
     id_medicament
 )
 VALUES (
-    'esquizofrenia',
+    'Esquizofrenia',
     1
 );
 INSERT INTO simptomatologia (
@@ -195,7 +235,47 @@ INSERT INTO efectes_secundaris (
     id_medicament
 )
 VALUES (
-    'diabetes mellitus,problemas para dormir,ansiedad,temblor,cansancio,mareo',
+    'Diabetes mellitus',
+    2
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Problemas para dormir',
+    2
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Ansiedad',
+    2
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Temblor',
+    2
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Cansancio',
+    2
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Mareo',
     2
 );
 INSERT INTO forma_farmaceutica (
@@ -203,7 +283,7 @@ INSERT INTO forma_farmaceutica (
     id_medicament
 )
 VALUES (
-    'liquid',
+    'Pastillas orales',
     2
 );
 INSERT INTO laboratori (
@@ -221,7 +301,7 @@ INSERT INTO patologia (
     id_medicament
 )
 VALUES (
-    'esquizofrenia',
+    'Esquizofrenia',
     2
 );
 INSERT INTO simptomatologia (
@@ -268,7 +348,55 @@ INSERT INTO efectes_secundaris (
     id_medicament
 )
 VALUES (
-    'dificultad para respirar o tragar,hinchazón de la cara,labios, lengua o garganta,picor grave de la piel,con una erupción de color rojo o protuberancias.',
+    'Dificultad para respirar',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Dificultad para tragar',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hinchazón de la cara',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hinchazón de labios',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hinchazón de la garganta',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Picor grave de la piel',
+    3
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Protuberancias',
     3
 );
 INSERT INTO forma_farmaceutica (
@@ -276,7 +404,7 @@ INSERT INTO forma_farmaceutica (
     id_medicament
 )
 VALUES (
-    'solid',
+    'Pastillas orales',
     3
 );
 INSERT INTO laboratori (
@@ -294,7 +422,7 @@ INSERT INTO patologia (
     id_medicament
 )
 VALUES (
-    'cáncer',
+    'Cáncer',
     3
 );
 INSERT INTO simptomatologia (
@@ -337,111 +465,39 @@ INSERT INTO efectes_secundaris (
     id_medicament
 )
 VALUES (
-    'Gastrointestinales:
-
-Los efectos adversos más frecuentes que ocurren con los medicamentos como Ibuprofeno son los gastrointestinales: úlceras pépticas, hemorragias digestivas, perforaciones (en algunos casos mortales), especialmente en pacientes de edad avanzada. También se han observado náuseas, vómitos, diarrea, flatulencia, estreñimiento, ardor de estómago, dolor abdominal, sangre en heces, aftas bucales, empeoramiento de colitis ulcerosa y enfermedad de Crohn ((enfermedad crónica en la que el sistema inmune ataca el intestino provocando inflamación que produce generalmente diarrea con sangre).
-
-Menos frecuentemente se ha observado la aparición de gastritis.
-
-Raros: inflamación del esófago, estrechamiento del esófago (estenosis esofágica), exacerbación de enfermedad de los divertículos intestinales, colitis hemorrágica inespecífica (gastroenteritis que cursa con diarrea con sangre).
-
-Muy raros: pancreatitis.
-
- 
-
-Cardiovasculares:
-
-Los medicamentos como Ibuprofeno, pueden asociarse con un moderado aumento de riesgo de sufrir un ataque al corazón (“infarto de miocardio”) o cerebral (“ictus”).
-
-También se ha observado edema (retención de líquidos), hipertensión arterial, e insuficiencia cardiaca en asociación con tratamientos con medicación del tipo Ibuprofeno Aldo-Unión.
-
- 
-
-Cutáneos:
-
-Frecuentes: erupción en la piel.
-
-Poco frecuentes: enrojecimiento de la piel, picor o hinchazón de la piel, púrpura (manchas violáceas en la piel).
-
-Muy raros: caída del cabello, eritema multiforme (lesión en la piel), reacciones en la piel por influencia de la luz, inflamación de los vasos sanguíneos de la piel.
-
-Excepcionalmente pueden darse infecciones cutáneas graves y complicaciones en el tejido blando durante la varicela.
-
-Los medicamentos como Ibuprofeno pueden asociarse, en muy raras ocasiones a reacciones ampollosas muy graves como el síndrome de Stevens Jonson (erosiones diseminadas que afectan a la piel y a dos o más mucosas y lesiones de color púrpura, preferiblemente en el tronco) y la Necrolisis Epidérmica Tóxica (erosiones en mucosas y lesiones dolorosas con necrosis y desprendimiento de la epidermis).
-
-Se puede producir una reacción cutánea grave conocida como síndrome DRESS. Los síntomas del síndrome DRESS incluyen: erupción cutánea, inflamación de los ganglios linfáticos y eosinófilos elevados (un tipo de glóbulos blancos).
-
-Frecuencia no conocida:
-
-Erupción generalizada roja escamosa, con bultos debajo de la piel y ampollas localizados principalmente en los pliegues cutáneos, el tronco y las extremidades superiores, que se acompaña de fiebre al inicio del tratamiento (pustulosis exantemática generalizada aguda). Deje de tomar Ibuprofeno Aldo-Unión si presenta estos síntomas y solicite atención médica de inmediato. Ver también la sección 2.
-
- 
-
-Sistema inmunológico:
-
-Poco frecuentes: edema pasajero en áreas de la piel, mucosas o a veces en vísceras (angioedema),
-
-inflamación de la mucosa nasal, broncoespasmo (espasmo de los bronquios que impiden el paso del aire hacia los pulmones).
-
-Raros: reacciones alérgicas graves (shock anafiláctico). En caso de reacción de hipersensibilidad generalizada grave puede aparecer hinchazón de cara, lengua y laringe, broncoespasmo, asma, taquicardia, hipotensión y shock.
-
-Muy raros: dolor en las articulaciones y fiebre (lupus eritematoso).
-
- 
-
-Sistema nervioso central:
-
-Frecuentes: fatiga o somnolencia, dolor de cabeza y mareos o sensación de inestabilidad.
-
-Raros: parestesia (sensación de adormecimiento, hormigueo, acorchamiento, etc más frecuente en manos, pies, brazos o piernas). Muy raros: meningitis aséptica (inflamación de las meninges que son las membranas que protegen el cerebro y la medula espinal, no causada por bacterias). En la mayor parte de los casos en los que se ha comunicado meningitis aséptica con ibuprofeno, el paciente sufría alguna forma de enfermedad autoinmunitaria (como lupus eritematoso sistémico u otras enfermedades del colágeno) lo que suponía un factor de riesgo. Los síntomas de meningitis aséptica observados fueron rigidez en cuello, dolor de cabeza, náuseas, vómitos, fiebre o desorientación.
-
- 
-
-Psiquiátricos:
-
-Poco frecuentes: insomnio, ansiedad, inquietud. Raros: desorientación o confusión, nerviosismo, irritabilidad, depresión, reacción psicótica.
-
- 
-
-Auditivos:
-
-Frecuentes: vértigo. Poco frecuentes: zumbidos o pitidos en los oídos. Raros: dificultad auditiva.
-
- 
-
- 
-
-Oculares:
-
-Poco frecuentes: alteraciones de la visión. Raros: visión anormal o borrosa.
-
- 
-
-Sangre:
-
-Raros: disminución de plaquetas, disminución de los glóbulos blancos (puede manifestarse por la aparición de infecciones frecuentes con fiebre, escalofríos o dolor de garganta), disminución de los glóbulos rojos (puede manifestarse por dificultad respiratoria y palidez de la piel), disminución de granulocitos (un tipo de glóbulos blancos que puede predisponer a que se contraigan infecciones), pancitopenia (deficiencia de glóbulos rojos, blancos y plaquetas en la sangre), agranulocitosis (disminución muy grande de granulocitos), anemia aplásica (insuficiencia de la médula ósea para producir diferentes tipos de células) o anemia hemolítica (destrucción prematura de los glóbulos rojos).
-
-Los primeros síntomas son: fiebre, dolor de garganta, úlceras superficiales en la boca, síntomas pseudogripales, cansancio extremo, hemorragia nasal y cutánea. Muy raros: prolongación del tiempo de sangrado.
-
- 
-
-Renales:
-
-En base a la experiencia con los AINEs en general, no pueden excluirse casos de nefritis intersticial (trastorno del riñón) síndrome nefrótico (trastorno caracterizado por proteínas en la orina e hinchazón del cuerpo) e insuficiencia renal (pérdida súbita de la capacidad de funcionamiento del riñón).
-
- 
-
-Hepáticos:
-
-Los medicamentos como Ibuprofeno Aldo-Unión pueden asociarse, en raras ocasiones a lesiones hepáticas. Otros efectos adversos raros son: hepatitis (inflamación del hígado), anomalías de la función hepática e ictericia (coloración amarilla de la piel y ojos).
-
-Frecuencia desconocida: insuficiencia hepática (deterioro severo del hígado).
-
- 
-
-Generales:
-
-Agravación de las inflamaciones durante procesos infecciosos.',
+    'Asma',
+    4
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Úlceras pépticas',
+    4
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hemorragias',
+    4
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Infarto de miocardio',
+    4
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Ictus',
     4
 );
 INSERT INTO forma_farmaceutica (
@@ -449,7 +505,7 @@ INSERT INTO forma_farmaceutica (
     id_medicament
 )
 VALUES (
-    'solid',
+    'Pastillas orales',
     4
 );
 INSERT INTO laboratori (
@@ -467,7 +523,23 @@ INSERT INTO patologia (
     id_medicament
 )
 VALUES (
-    'dolor,fiebre,artritis reumatoide juvenil',
+    'Dolor',
+    4
+);
+INSERT INTO patologia (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Fiebre',
+    4
+);
+INSERT INTO patologia (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Artritis reumatoide juvenil',
     4
 );
 INSERT INTO simptomatologia (
@@ -481,6 +553,82 @@ VALUES (
      Fiebre.
      Artritis reumatoide juvenil.',
     4
+);
+
+
+INSERT INTO medicaments (
+  composicio,
+  nom,
+  codi_barres,
+  comentaris
+  )
+VALUES (
+  'Composición de Ventolin 100 microgramos/inhalación suspensión para inhalación en envase a presión
+    El principio activo es 100 microgramos de salbutamol (como salbutamol sulfato) por aplicación.
+    Los demás componentes son norflurano (HFA134a).',
+  'VENTOLIN Susp. para inhal. 100 mcg/dosis inhalador de 200 dosis',
+  '8470006567067',
+  'Siga exactamente las instrucciones de administración de este medicamento indicadas por su médico. En caso de duda, consulte de nuevo a su médico o farmacéutico.
+    Recuerde usar su medicamento. Su médico le indicará la duración de su tratamiento con Ventolin. No suspenda el tratamiento antes.
+    Ventolin 100 microgramos/inhalación suspensión para inhalación en envase a presión produce una fina niebla que debe ser inhalada en los pulmones. Asegúrese que sabe utilizar el inhalador correctamente. Si tiene cualquier problema pregunte a su médico o farmacéutico.'
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Mareo ',
+    5
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hinchazón de párpados',
+    5
+);
+INSERT INTO efectes_secundaris (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Hinchazón de labios',
+    5
+);
+INSERT INTO forma_farmaceutica (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Inhalador',
+    5
+);
+INSERT INTO laboratori (
+    descripcio,
+    nom,
+    id_medicament
+)
+VALUES (
+    'Avda. de Extremadura, 3 09400 – Aranda de Duero (Burgos)',
+    'Glaxo Wellcome, S.A.',
+    5
+);
+INSERT INTO patologia (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Asma',
+    5
+);
+INSERT INTO simptomatologia (
+    descripcio,
+    id_medicament
+)
+VALUES (
+    'Medicación de rescate en el asma leve, moderada o grave. Prevención de broncoespasmo (dificultad para respirar o sibilancias) inducido por ejercicio físico o antes de exponerse a un estímulo alergénico conocido e inevitable.',
+    5
 );
 
 
