@@ -83,36 +83,42 @@ $resultados = mysqli_query($enlace, $instruccion);
             </div>
             <div class="mt-3">
                 <?php
-        
-                if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") && ($laboratorio == "") && ($formafarmaceutica == "")) {
-                    $instruccion = "select * from medicaments";
+                if ($medicamentos != ""){
+                    $instruccion = "select * from medicaments where nom LIKE '%".$medicamentos."%'";             
                     $resultados = mysqli_query($enlace, $instruccion);
                 }
                 else{
-                    if ($efectossecundarios == ""){
-                        $instruccion = "select * from medicaments where id_medicament = '" . $patologia . "' and id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
+                    if (($medicamentos == "") && ($efectossecundarios == "") && ($patologia == "") && ($laboratorio == "") && ($formafarmaceutica == "")) {
+                        $instruccion = "select * from medicaments";
                         $resultados = mysqli_query($enlace, $instruccion);
-                        if ($patologia == ""){
-                            $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
+                    }
+                
+                    else{
+                        if ($efectossecundarios == ""){
+                            $instruccion = "select * from medicaments where id_medicament = '" . $patologia . "' and id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
                             $resultados = mysqli_query($enlace, $instruccion);
-                            if ($laboratorio == ""){
-                                if($formafarmaceutica == 1 || $formafarmaceutica == 2 || $formafarmaceutica == 3 || $formafarmaceutica == 4 ){
-                                    $instruccion = "select * from medicaments where id_medicament != 5";
-                                    $resultados = mysqli_query($enlace, $instruccion);
+                            if ($patologia == ""){
+                                $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "' and id_medicament = '" . $formafarmaceutica . "'";
+                                $resultados = mysqli_query($enlace, $instruccion);
+                                if ($laboratorio == ""){
+                                    if($formafarmaceutica == 1 || $formafarmaceutica == 2 || $formafarmaceutica == 3 || $formafarmaceutica == 4 ){
+                                        $instruccion = "select * from medicaments where id_medicament != 5";
+                                        $resultados = mysqli_query($enlace, $instruccion);
+                                    }
+                                    else{
+                                        $instruccion = "select * from medicaments where id_medicament = 5";
+                                        $resultados = mysqli_query($enlace, $instruccion);
+                                    }                           
                                 }
-                                else{
-                                    $instruccion = "select * from medicaments where id_medicament = 5";
-                                    $resultados = mysqli_query($enlace, $instruccion);
-                                }                           
-                            }
-                            else if($formafarmaceutica == ""){
-                                if($laboratorio == 1 || $laboratorio == 2){
-                                    $instruccion = "select * from medicaments where id_medicament = 1 OR id_medicament = 2";
-                                    $resultados = mysqli_query($enlace, $instruccion);
-                                }
-                                else{
-                                    $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "'";
-                                    $resultados = mysqli_query($enlace, $instruccion);
+                                else if($formafarmaceutica == ""){
+                                    if($laboratorio == 1 || $laboratorio == 2){
+                                        $instruccion = "select * from medicaments where id_medicament = 1 OR id_medicament = 2";
+                                        $resultados = mysqli_query($enlace, $instruccion);
+                                    }
+                                    else{
+                                        $instruccion = "select * from medicaments where id_medicament = '" . $laboratorio . "'";
+                                        $resultados = mysqli_query($enlace, $instruccion);
+                                    }
                                 }
                             }
                         }
