@@ -61,7 +61,6 @@ require('conexion.php');
 
   </div>
 </header><!-- End Header -->
-  <br>
   <div class="card offset-lg-1 col-lg-10">
     <div class="card-body">
       <form action="Esresultado.php" method="post">
